@@ -1,1 +1,1 @@
-# codeup-webdev-exercises-2
+# codeup-web-exercises

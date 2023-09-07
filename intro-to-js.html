@@ -29,10 +29,10 @@
 <hr>
 <p class="second" id="two" onclick="tryIt()">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate dolore dolores et ipsam libero maxime nesciunt non nostrum, quos recusandae sint?</p>
 <ul id="resetAll">
-    <li class='reset' id="my" onclick="my()">My</li>
-    <li class='reset' id="name" onclick="name()">Name</li>
-    <li class='reset' id="is" onclick="is()">is</li>
-    <li class='reset' id="matthias" onclick="matthias()">Matthias</li>
+    <li id="my" onclick="my()">My</li>
+    <li id="name" onclick="name()">Name</li>
+    <li id="is" onclick="is()">is</li>
+    <li id="matthias" onclick="matthias()">Matthias</li>
 </ul>
 <button id="reset" onclick="reset()">reset</button>
 <script>
@@ -55,25 +55,27 @@
 
     function reset(){
         console.log('button clicked')
-
+        // let y = document.querySelector("#reset")
+        // console.log("Y: " +y)
         if(reset){
             document.getElementsByTagName('LI')[0].style.color = 'black'
             document.getElementsByTagName('LI')[1].style.color = 'black'
             document.getElementsByTagName('LI')[2].style.color = 'black'
             document.getElementsByTagName('LI')[3].style.color = 'black'
+            document.getElementById('bodE').backgroundColor = 'white'
         }
     }
+
+    // const newButtsToForm = document.querySelector("#reset");
+    // console.log('bRound clicked: ' + newButtsToForm)
+
     function bRound() {
+        // const newButtsToForm = document.querySelector("#reset");
+        // console.log('bRound clicked: ' + newButtsToForm)
 
-        // console.log('bRound clicked')
-        document.getElementById("bodE").style.backgroundColor = "grey";
+       let x =  document.getElementById("bodE").style.backgroundColor = "grey";
 
-        // let reSet = document.getElementById('reset');
-        // console.log('see it: ' +reSet)
-
-        // if(reSet){
-        //     document.getElementById('bodE').style.backgroundColor = 'white'
-        // }
+       // console.log("x: " +x)
     }
 </script>
 </body>
