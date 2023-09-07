@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro to JS</title>
+    <style>
+        p{
+            color: red;
+            border: 1px solid black;
+            padding: 5px;
+        }
+        p.second{
+            color: blue;
+            border: 1px solid pink;
+        }
+        li{
+            font-size: 55px;
+        }
+        button{
+            font-size: 45px;
+            padding: 5px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body id='bodE' onclick="bRound()">
+<h1>This is the Intro</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab expedita iste maiores natus nemo. Accusamus architecto distinctio, eum fuga fugit minus, nihil nobis non obcaecati odit possimus veniam. Illo, sapiente.</p>
+<hr>
+<p class="second" id="two" onclick="tryIt()">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate dolore dolores et ipsam libero maxime nesciunt non nostrum, quos recusandae sint?</p>
+<ul id="resetAll">
+    <li class='reset' id="my" onclick="my()">My</li>
+    <li class='reset' id="name" onclick="name()">Name</li>
+    <li class='reset' id="is" onclick="is()">is</li>
+    <li class='reset' id="matthias" onclick="matthias()">Matthias</li>
+</ul>
+<button id="reset" onclick="reset()">reset</button>
+<script>
+    function tryIt(){
+        alert('clacked me')
+    }
+    function my(){
+        document.getElementById('my').style.color = 'orange'
+    }
+    function name(){
+        document.getElementById('name').style.color = 'purple'
+    }
+    function is(){
+        document.getElementById('is').style.color = 'red'
+    }
+    function matthias(){
+        document.getElementById('matthias').style.color = 'green'
+    }
+
+
+    function reset(){
+        console.log('button clicked')
+
+        if(reset){
+            document.getElementsByTagName('LI')[0].style.color = 'black'
+            document.getElementsByTagName('LI')[1].style.color = 'black'
+            document.getElementsByTagName('LI')[2].style.color = 'black'
+            document.getElementsByTagName('LI')[3].style.color = 'black'
+        }
+    }
+    function bRound() {
+
+        // console.log('bRound clicked')
+        document.getElementById("bodE").style.backgroundColor = "grey";
+
+        // let reSet = document.getElementById('reset');
+        // console.log('see it: ' +reSet)
+
+        // if(reSet){
+        //     document.getElementById('bodE').style.backgroundColor = 'white'
+        // }
+    }
+</script>
+</body>
+</html>
