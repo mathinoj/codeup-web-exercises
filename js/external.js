@@ -35,9 +35,10 @@ if(toLowClass === 'no' && toLowSched === 'no'){
     alert('You Cant Enroll!')
 }
 
-let promptPremium = prompt('Are you a premium member, Yes or No?');
-let lowPremium = promptPremium.toLowerCase();
-if(lowPremium === 'yes'){
+let promptPremium = confirm('Are you a premium member, OK(Yes) or Cancel(No)?');
+// let lowPremium = promptPremium.toLowerCase();
+// if(lowPremium === 'yes'){
+if(promptPremium === true){
     alert('You get special offer!')
 } else {
     let promptHowMany = prompt('How many items did you buy?');
@@ -45,10 +46,12 @@ if(lowPremium === 'yes'){
     if (parseHowMany < 2 || parseHowMany === 2) {
         alert('You gotta buy more than 2 items!')
     } else if (parseHowMany > 2) {
-        let promptExpired = prompt('Has offer expired, Yes or No?');
-        let lowExpired = promptExpired.toLowerCase();
-        if (lowExpired === 'yes') {
-            alert('We cant give special offer!')
+        // let promptExpired = prompt('Has offer expired, Yes or No?');
+        let promptExpired = confirm('Has offer expired, OK(Yes) or Cancel(No)?');
+        // let lowExpired = promptExpired.toLowerCase();
+        // if (lowExpired === 'yes') {
+            if (promptExpired === true) {
+                alert('We cant give special offer!')
         } else {
             alert('You qualify for special offer!')
         }

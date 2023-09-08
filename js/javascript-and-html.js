@@ -76,5 +76,16 @@ trimUser.innerText =   `Username untrimmed: "${spaceUsername}", but w/ trim its:
 let trimPass = document.querySelector('#ellEye12');
 trimPass.innerText = `Password untrimmed: "${spacePass}", but w/ trim its: "${trimSpacePass}"`
 
+for(let i = 1; i <= 10; ++i){
+    // let x = 1;
+let iToString = i.toString()
+let repetition = iToString.repeat(5)
+
+    console.log(repetition)
+    // console.log(i++)
+    // console.log(typeof i)
+
+}
+
 
 
