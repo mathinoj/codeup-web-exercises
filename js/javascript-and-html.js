@@ -58,5 +58,23 @@ let pWord5 = password.length >= 5;
 let showPwrdLngth = document.querySelector('#ellEye8')
 showPwrdLngth.innerText = `Pword length is at least 5chars long: ${pWord5}`
 
-// let whatsNum = prompt('Whats your number?')
-// console.log("whatsNum: " +whatsNum)
+let findIt = password.includes(username)
+let tfUserName = document.querySelector('#ellEye9')
+tfUserName.innerText = `Is the username in the p-word? ${findIt}`
+
+let pWord20 = password.length <= 20;
+let tfPwrd20 = document.querySelector('#ellEye10');
+tfPwrd20.innerText = `Is p-word less than or equal to 20: ${pWord20}`
+
+let spaceUsername = ' codeup ';
+let spacePass = ' notastrongpassword ';
+
+let trimSpaceUser = spaceUsername.trim();
+let trimSpacePass = spacePass.trim();
+let trimUser = document.querySelector('#ellEye11');
+trimUser.innerText =   `Username untrimmed: "${spaceUsername}", but w/ trim its: "${trimSpaceUser}"`
+let trimPass = document.querySelector('#ellEye12');
+trimPass.innerText = `Password untrimmed: "${spacePass}", but w/ trim its: "${trimSpacePass}"`
+
+
+
