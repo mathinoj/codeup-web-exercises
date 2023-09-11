@@ -127,3 +127,19 @@ function applyDiscount(price, discountPercentage){
     return price - (price * discountPercentage);
 }
 // console.log(applyDiscount())
+
+
+function trim(string, maxLength){
+    let i = string.length
+    let u = maxLength - 3;
+    let v = string.slice(0, u);
+    let z = string.slice(0, maxLength)
+    let s = v + "...";
+    if(i > maxLength && maxLength > 3){
+            console.log(s)
+        } else if(i <= maxLength){
+            console.log(string)
+        } if(maxLength <= 3){
+            console.log(z + "...")
+        }
+    }
