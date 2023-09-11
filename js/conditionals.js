@@ -38,6 +38,8 @@ function analyzeColor(color){
 		alert(`Old digi watches had background color of ${color}`)
 	} else if (color === 'violet'){
 		alert(`Purple is ${color}`)
+	} else {
+		alert(`I am not familiar with ${color}`)
 	}
 }
 // console.log(analyzeColor('red'))
@@ -54,13 +56,41 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-console.log(randomColor)
-console.log(analyzeColor(randomColor))
+// console.log(randomColor)
+// console.log(analyzeColor(randomColor))
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+// let colorz = prompt('Write a color in the box below!');
+// let colorz = 'violet'
+// switch(colorz){
+// 	case "red":
+// 		alert(`You chose ${colorz}, my hair is red!`)
+// 		break;
+// 	case "orange":
+// 		alert(`You chose ${colorz}, my orange is orange!`)
+// 		break;
+// 	case "yellow":
+// 		alert(`You chose ${colorz}, i am not yella!`)
+// 		break;
+// 	case "green":
+// 		alert(`You chose ${colorz}, my whip is green!`)
+// 		break;
+// 	case "blue":
+// 		alert(`You chose ${colorz}, i got the blues!`)
+// 		break;
+// 	case "indigo":
+// 		alert(`You chose ${colorz}, indigo is aight!`)
+// 		break;
+// 	case "violet":
+// 		alert(`You chose ${colorz}, that makes me violent!`)
+// 		break;
+// 	default:
+// 		alert(`${colorz} isnt my favorite but lets order some!`)
+// 		break;
+// }
 
 /**
  * TODO:
