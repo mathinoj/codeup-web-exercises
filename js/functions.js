@@ -13,12 +13,8 @@ function sayHello (name){
     let toUpper = toLow.charAt(0).toUpperCase() + toLow.slice(1);
     return "Hello there " +toUpper+ "!";
 }
-//
-// function addTwoNumbs (firstNumb, secondNumb){
-//     const sum = firstNumb + secondNumb;
-//     return sum;
-// }
-
+// console.log(sayHello())
+// sayHello()
 
 /**
  * TODO:
@@ -32,6 +28,7 @@ function sayHello2(name){
     let helloMessage = `Hello to you, ${name}`;
     return helloMessage;
 }
+// let msg = sayHello()
 
 
 /**
@@ -67,9 +64,9 @@ console.log(random)
 function isTwo(number){
     console.log(`The number is ${number}`)
     if(number === 2){
-        return 'true'
+        return 'True, does equal to 2!'
     } else {
-        return 'false';
+        return 'False, does not equal to 2.';
     }
 }
 console.log(isTwo(random));
@@ -132,14 +129,14 @@ function applyDiscount(price, discountPercentage){
 function trim(string, maxLength){
     let i = string.length
     let u = maxLength - 3;
-    let v = string.slice(0, u);
-    let z = string.slice(0, maxLength)
+    let v = string.slice(0, maxLength);
     let s = v + "...";
-    if(i > maxLength && maxLength > 3){
-            console.log(s)
+    if(i > maxLength){
+        console.log(s)
         } else if(i <= maxLength){
-            console.log(string)
-        } if(maxLength <= 3){
-            console.log(z + "...")
+        console.log(string)
+        } if(i <= 3 && maxLength <= 3){
+        console.log(v + "...")
+        console.log("zL: " +v.length)
         }
     }
