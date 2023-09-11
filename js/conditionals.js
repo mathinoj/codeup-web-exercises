@@ -37,7 +37,7 @@ function analyzeColor(color){
 	} else if(color === 'indigo'){
 		alert(`Old digi watches had background color of ${color}`)
 	} else if (color === 'violet'){
-		alert(`Purple is ${color}`)
+		alert(`Purple is similar to ${color}`)
 	} else {
 		alert(`I am not familiar with ${color}`)
 	}
@@ -98,7 +98,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-
+// let showColor = prompt(`Write a color!`)
+// console.log(analyzeColor(showColor))
 /* ########################################################################## */
 
 /**
@@ -120,7 +121,26 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-
+function calculateTotal(luckyNumber, total){
+	if(luckyNumber === 0){
+		console.log(`Lucky number is ${luckyNumber}. You get no discount. Your total is ${total}`)
+	} else if (luckyNumber === 1){
+		let x = total - (total * .10);
+		console.log(`Lucky number is ${luckyNumber}. You get a 10% discount. Your old total was ${total}, your new total is ${x}`)
+	} else if (luckyNumber === 2){
+		let y = total - (total * .25);
+		console.log(`Lucky number is ${luckyNumber}. You get a 25% discount. Your old total was ${total}, your new total is ${y}`)
+	} else if (luckyNumber === 3){
+		let z = total - (total * .35);
+		console.log(`Lucky number is ${luckyNumber}. You get a 35% discount. Your old total was ${total}, your new total is ${z}`)
+	} else if (luckyNumber === 4){
+		let q = total - (total * .50);
+		console.log(`Lucky number is ${luckyNumber}. You get a 50% discount. Your old total was ${total}, your new total is ${q}`)
+	} else if (luckyNumber === 5){
+		console.log(`Your lucky number is ${luckyNumber}. Your total was ${total}, but now its 0!`)
+	}
+}
+console.log(calculateTotal(5, 100))
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -132,7 +152,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
 
-// **
+// /**
 //  * TODO:
 //  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
 //  * would like to enter a number. If they click 'Ok', prompt the user for a
