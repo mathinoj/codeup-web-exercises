@@ -123,24 +123,24 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 function calculateTotal(luckyNumber, total){
 	if(luckyNumber === 0){
-		console.log(`Lucky number is ${luckyNumber}. You get no discount. Your total is ${total}`)
+		alert(`Lucky number is ${luckyNumber}. You get no discount. Your total is still $${total}`)
 	} else if (luckyNumber === 1){
 		let x = total - (total * .10);
-		console.log(`Lucky number is ${luckyNumber}. You get a 10% discount. Your old total was ${total}, your new total is ${x}`)
+		alert(`Lucky number is ${luckyNumber}. You get a 10% discount. Your old total was $${total}, your new total is $${x}`)
 	} else if (luckyNumber === 2){
 		let y = total - (total * .25);
-		console.log(`Lucky number is ${luckyNumber}. You get a 25% discount. Your old total was ${total}, your new total is ${y}`)
+		alert(`Lucky number is ${luckyNumber}. You get a 25% discount. Your old total was $${total}, your new total is $${y}`)
 	} else if (luckyNumber === 3){
 		let z = total - (total * .35);
-		console.log(`Lucky number is ${luckyNumber}. You get a 35% discount. Your old total was ${total}, your new total is ${z}`)
+		alert(`Lucky number is ${luckyNumber}. You get a 35% discount. Your old total was $${total}, your new total is $${z}`)
 	} else if (luckyNumber === 4){
 		let q = total - (total * .50);
-		console.log(`Lucky number is ${luckyNumber}. You get a 50% discount. Your old total was ${total}, your new total is ${q}`)
+		alert(`Lucky number is ${luckyNumber}. You get a 50% discount. Your old total was $${total}, your new total is $${q}`)
 	} else if (luckyNumber === 5){
-		console.log(`Your lucky number is ${luckyNumber}. Your total was ${total}, but now its 0!`)
+		alert(`Your lucky number is ${luckyNumber}. Your total was $${total}, but now its $0!`)
 	}
 }
-console.log(calculateTotal(5, 100))
+// console.log(calculateTotal(5, 100))
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -150,7 +150,11 @@ console.log(calculateTotal(5, 100))
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+console.log("luckyNumb: " +luckyNumber)
+let total = prompt('What is your total?')
+console.log(calculateTotal(luckyNumber, total))
+
 
 // /**
 //  * TODO:
