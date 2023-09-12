@@ -18,3 +18,8 @@ for(let i = 1; i <= 10; i++){
 		console.log(`${random} is odd`)
 	}
 }
+
+for(let i = 1; i <10; i++){
+	let repeater = i.toString();
+	console.log(repeater.repeat(i))
+}
