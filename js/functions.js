@@ -128,14 +128,16 @@ function applyDiscount(price, discountPercentage){
 
 function trim(string, maxLength){
     let i = string.length
+    console.log("i-Length: " +i)
     let u = maxLength - 3;
     let v = string.slice(0, maxLength);
-    let s = v + "...";
+    let a = string.slice(0, u);
+    let s = a + "...";
     if(i > maxLength){
         console.log(s)
         } else if(i <= maxLength){
         console.log(string)
-        } if(i <= 3 && maxLength <= 3){
+        } else if(i <= 3 && maxLength <= 3){
         console.log(v + "...")
         console.log("zL: " +v.length)
         }

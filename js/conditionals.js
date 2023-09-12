@@ -152,8 +152,8 @@ function calculateTotal(luckyNumber, total){
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
 console.log("luckyNumb: " +luckyNumber)
-let total = prompt('What is your total?')
-console.log(calculateTotal(luckyNumber, total))
+// let total = prompt('What is your total?')
+// console.log(calculateTotal(luckyNumber, total))
 
 
 // /**
@@ -173,3 +173,44 @@ console.log(calculateTotal(luckyNumber, total))
 //  *
 //  * Can you refactor your code to use functions?
 //  * HINT: The way we prompt for a value could be improved
+
+let questionNumb = confirm('Would you like to enter a number?')
+console.log('questionNumb: ' +questionNumb)
+if(questionNumb === true) {
+	let enterNumb = prompt("Enter a number!");
+	let parsedEntry = parseInt(enterNumb);
+	console.log('enterNumb: ' + enterNumb)
+	console.log("enterNumb is... " + typeof enterNumb)
+	console.log('parsedEntry: ' + parsedEntry)
+	console.log(typeof parsedEntry)
+	console.log( parsedEntry >! 0)
+	console.log( parsedEntry <! 0)
+	let l = parsedEntry >! 0
+	let o = parsedEntry <! 0
+	// console.log("LLLL: " +l)
+	// console.log("OOOO: " +o)
+	l = false;
+	o = false;
+	// while(l === false || o === false){
+	// 	prompt('That was not a number. Enter a number!');
+	// 	if (l === true || o === true){
+	// 		break;
+	// 	}
+	// }
+	// }
+		if (parsedEntry % 2 === 0 && parsedEntry > 0) {
+			alert(`Your number is even, and is positive. Your number plus 100 equals ${parsedEntry + 100}`)
+		} else if (parsedEntry % 2 !== 0 && parsedEntry > 0) {
+			alert(`Your number is odd, and is positive. Your number plus 100 equals ${parsedEntry + 100}`)
+		} else if (parsedEntry % 2 === 0 && parsedEntry < 0) {
+			alert(`Your number is even, and is negative. Your number plus 100 equals ${parsedEntry + 100}`)
+		} else if (parsedEntry % 2 !== 0 && parsedEntry < 0) {
+			alert(`Your number is odd, and is negative. Your number plus 100 equals ${parsedEntry + 100}`)
+		} else {
+			// while(parsedEntry !== "")
+			alert('You need to restart and enter a number')
+		}
+	// }
+} else {
+	alert('Bye!')
+}
