@@ -177,15 +177,17 @@ console.log("luckyNumb: " +luckyNumber)
 let questionNumb = confirm('Would you like to enter a number?')
 console.log('questionNumb: ' +questionNumb)
 if(questionNumb === true) {
-	let enterNumb = Number(prompt("Enter a number!"));
+	let enterNum = prompt("Enter a number!")
+	let enterNumb = parseInt(enterNum)
 	console.log('enterNumb: ' + enterNumb)
 	console.log("enterNumb is... " + typeof enterNumb)
 
 	console.log(Boolean(enterNumb))
 	let isEntryTorF = Boolean(enterNumb)
 	console.log("isEntryOf: " +isEntryTorF)
+	let enterNumbs;
 		while (isEntryTorF !== true) {
-			let enterNumbs = prompt('Not a numb. Enter a numb.');
+			enterNumbs = prompt(`You entered: ${enterNum}, that is not a numb. Enter a numb.`);
 			let enterNumb = parseInt(enterNumbs)
 			console.log("enterNumbZ: " +enterNumbs)
 			console.log("enterNumb: " +enterNumb)
@@ -198,12 +200,9 @@ if(questionNumb === true) {
 					alert(`Your number is even, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
 				} else if (enterNumb % 2 !== 0 && enterNumb < 0) {
 					alert(`Your number is odd, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
-				} else if (enterNumbs === null){
-					alert('bye')
 				}
 				break;
 			}
-
 		}
 			if (enterNumb % 2 === 0 && enterNumb > 0) {
 				alert(`Your number is even, and is positive. Your number plus 100 equals ${enterNumb + 100}`)

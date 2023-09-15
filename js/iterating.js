@@ -72,7 +72,7 @@ console.log(names.length)
 	two()
 
 	function third(){
-		console.log(last[4])
+		console.log(last[last.length - 1])
 	}
 	third()
 })();
