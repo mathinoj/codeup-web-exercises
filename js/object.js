@@ -50,13 +50,11 @@
 
 		if(names.amount > 200){
 			let newTotal = names.amount-(names.amount*.12)
-				// console.log("xx: " +x)
 			console.log(`${names.name} gets a 12% discount!. There new total is...$${newTotal}`)
 		} else {
 			console.log(`${names.name} does NOT get a discount.`)
 		}
 	})
-	// console.log(`The first shopper is ${shoppers.name}`)
 
 	/** TODO:
 	 * Create an array of objects that represent books and store it in a
@@ -70,7 +68,41 @@
 	 * > console.log(books[0].author.firstName) // "Douglas"
 	 * > console.log(books[0].author.lastName) // "Adams"
 	 */
-
+	let books = [
+		{title: 'Scary B One',
+			author: {
+				firstName: 'RL',
+				lastName: 'Stein'
+				}
+			},
+		{title: 'B Two Scary',
+			author: {
+				firstName: 'Styne',
+				lastName: 'Arell'
+				}
+			},
+		{title: 'Three Scary B',
+			author: {
+				firstName: 'LR',
+				lastName: 'Stine'
+			}
+		},
+		{title: 'Four Book',
+			author: {
+				firstName: 'Matt',
+				lastName: 'Dogg'
+			}
+		},
+		{title: 'Five Book',
+			author: {
+				firstName: 'Mutt',
+				lastName: 'Dawg'
+			}
+		}
+	];
+	// console.log(books[0].title)
+	// console.log(books[0].author.firstName)
+	// console.log(books[0].author.lastName)
 	/**
 	 * TODO:
 	 * Loop through the books array and output the following information about
@@ -95,6 +127,9 @@
 	 *      ---
 	 *      ...
 	 */
+	for(let bookie of books){
+		console.log("Bukiz: " +bookie.title)
+	}
 
 	/**
 	 * Bonus:
