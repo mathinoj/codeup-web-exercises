@@ -138,7 +138,6 @@
 		console.log(`Book # ${bookCount}`)
 		console.log("Title: " +bookie.title)
 		console.log(`Author: ${bookie.author.firstName} ${bookie.author.lastName}`)
-
 	}
 
 	/**
@@ -146,7 +145,7 @@
 	 * - Create a function named `createBook` that accepts a title and author name and returns a book object with the properties described previously. Refactor your code that creates the books array to instead use your function.
 	 * - Create a function named `showBookInfo` that accepts a book object and outputs the information described above. Refactor your loop to use your `showBookInfo` function.
 	 */
-	const object = {
+	const newBook = {
 		title: 'Tie',
 		author: {
 			firstName:
@@ -155,10 +154,24 @@
 				'Tull',
 		}
 	}
-
 	function createBook(){
-	books.push(object)
+	books.push(newBook)
 	}
 	createBook()
 	console.log(books)
+
+
+let bCount = 0;
+	function showBookInfo(bookInfo){
+		for(let boo of books){
+			bCount++;
+			console.log(`
+			Book# ${bCount}
+			Title: ${boo.title}
+			Author: ${boo.author.firstName} ${boo.author.lastName}
+			`)
+		}
+
+	}
+	showBookInfo()
 })();
