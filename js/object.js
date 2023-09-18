@@ -69,31 +69,36 @@
 	 * > console.log(books[0].author.lastName) // "Adams"
 	 */
 	let books = [
-		{title: 'Scary B One',
+		{
+			title: 'Scary B One',
 			author: {
 				firstName: 'RL',
 				lastName: 'Stein'
 				}
 			},
-		{title: 'B Two Scary',
+		{
+			title: 'B Two Scary',
 			author: {
 				firstName: 'Styne',
 				lastName: 'Arell'
 				}
 			},
-		{title: 'Three Scary B',
+		{
+			title: 'Three Scary B',
 			author: {
 				firstName: 'LR',
 				lastName: 'Stine'
 			}
 		},
-		{title: 'Four Book',
+		{
+			title: 'Four Book',
 			author: {
 				firstName: 'Matt',
 				lastName: 'Dogg'
 			}
 		},
-		{title: 'Five Book',
+		{
+			title: 'Five Book',
 			author: {
 				firstName: 'Mutt',
 				lastName: 'Dawg'
@@ -127,21 +132,33 @@
 	 *      ---
 	 *      ...
 	 */
+	let bookCount = 0;
 	for(let bookie of books){
-		console.log("Bukiz: " +bookie.title)
+		bookCount++;
+		console.log(`Book # ${bookCount}`)
+		console.log("Title: " +bookie.title)
+		console.log(`Author: ${bookie.author.firstName} ${bookie.author.lastName}`)
+
 	}
 
 	/**
 	 * Bonus:
-	 * - Create a function named `createBook` that accepts a title and author
-	 *   name and returns a book object with the properties described
-	 *   previously. Refactor your code that creates the books array to instead
-	 *   use your function.
-	 * - Create a function named `showBookInfo` that accepts a book object and
-	 *   outputs the information described above. Refactor your loop to use your
-	 *   `showBookInfo` function.
+	 * - Create a function named `createBook` that accepts a title and author name and returns a book object with the properties described previously. Refactor your code that creates the books array to instead use your function.
+	 * - Create a function named `showBookInfo` that accepts a book object and outputs the information described above. Refactor your loop to use your `showBookInfo` function.
 	 */
+	const object = {
+		title: 'Tie',
+		author: {
+			firstName:
+				'Ty',
+			lastName:
+				'Tull',
+		}
+	}
 
-
-
+	function createBook(){
+	books.push(object)
+	}
+	createBook()
+	console.log(books)
 })();
