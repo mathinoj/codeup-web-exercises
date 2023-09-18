@@ -187,31 +187,35 @@ if(questionNumb === true) {
 	console.log("isEntryOf: " +isEntryTorF)
 	let enterNumbs;
 		while (isEntryTorF !== true) {
-			enterNumbs = prompt(`You entered: ${enterNum}, that is not a numb. Enter a numb.`);
+			console.log('enter: ' +enterNum)
+			enterNumbs = prompt(`You entered: ${enterNumbs || enterNum}, that is not a numb. Enter a numb.`);
 			let enterNumb = parseInt(enterNumbs)
 			console.log("enterNumbZ: " +enterNumbs)
 			console.log("enterNumb: " +enterNumb)
 			if(enterNumb <0 || enterNumb >0){
 				if (enterNumb % 2 === 0 && enterNumb > 0) {
-					alert(`Your number is even, and is positive. Your number plus 100 equals ${enterNumb + 100}`)
+					alert(`Your number is ${enterNumb}. It is even, and is positive. Your number plus 100 equals ${enterNumb + 100}`)
 				} else if (enterNumb % 2 !== 0 && enterNumb > 0) {
-					alert(`Your number is odd, and is positive. Your number plus 100 equals ${enterNumb + 100}`)
+					alert(`Your number is ${enterNumb}. It is odd, and is positive. Your number plus 100 equals ${enterNumb + 100}`)
 				} else if (enterNumb % 2 === 0 && enterNumb < 0) {
-					alert(`Your number is even, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
+					alert(`Your number is ${enterNumb}. It is even, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
 				} else if (enterNumb % 2 !== 0 && enterNumb < 0) {
-					alert(`Your number is odd, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
+					alert(`Your number is ${enterNumb}. It is odd, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
 				}
+				break;
+			} else {
+				alert('buy')
 				break;
 			}
 		}
 			if (enterNumb % 2 === 0 && enterNumb > 0) {
-				alert(`Your number is even, and is positive. Your number plus 100 equals ${enterNumb + 100}`)
+				alert(`Your number is ${enterNumb}. It is even, and is positive. Your number plus 100 equals ${enterNumb + 100}`)
 			} else if (enterNumb % 2 !== 0 && enterNumb > 0) {
-				alert(`Your number is odd, and is positive. Your number plus 100 equals ${enterNumb + 100}`)
+				alert(`Your number is ${enterNumb}. It is odd, and is positive. Your number plus 100 equals ${enterNumb + 100}`)
 			} else if (enterNumb % 2 === 0 && enterNumb < 0) {
-				alert(`Your number is even, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
+				alert(`Your number is ${enterNumb}. It is even, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
 			} else if (enterNumb % 2 !== 0 && enterNumb < 0) {
-				alert(`Your number is odd, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
+				alert(`Your number is ${enterNumb}. It is odd, and is negative. Your number plus 100 equals ${enterNumb + 100}`)
 			}
 } else {
 	alert('Bye!')
