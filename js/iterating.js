@@ -61,18 +61,21 @@ console.log(names.length)
 	let first = [1, 2, 3, 4, 5]
 	let second = [1, 2, 3, 4, 5]
 	let last = [1, 2, 3, 4, 5]
-	function one(){
-		console.log(first[0])
+	function one(arr){
+		return arr[0];
+		// console.log(first[0])
 	}
-	one()
+	console.log(one(names))
 
-	function two(){
-		console.log(second[1])
+	function two(arr){
+		return arr[1];
+		// console.log(second[1])
 	}
-	two()
+	console.log(two())
 
-	function third(){
-		console.log(last[last.length - 1])
+	function third(arr){
+		return arr(last[last.length - 1]);
+		// console.log(last[last.length - 1])
 	}
-	third()
+	console.log(third(names))
 })();
