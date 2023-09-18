@@ -14,7 +14,7 @@
     "use strict";
 
     let detonationTimer = 5;
-	// setInterval(updateTimer, 1000);
+	let x = setInterval(updateTimer, 1000);
 
     // TODO: This function needs to be called once every second
     function updateTimer() {
@@ -31,8 +31,10 @@
 
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
-    function defuseTheBOM() {
 
+    function defuseTheBOM() {
+		clearInterval(x)
+        alert('BOM Stopped!!')
     }
 
     // Don't modify anything below this line!
@@ -42,21 +44,10 @@
     // We will learn about events in the DOM lessons
     let defuser = document.getElementById('defuser');
     defuser.addEventListener('click', defuseTheBOM);
+	// console.dir(defuser)
 
 
-	// var count = 0;
-	// var max = 10;
-	// var interval = 1000; // interval time in milliseconds
-    //
-	// var intervalId = setInterval(function () {
-	// 	if (count >= max) {
-	// 		clearInterval(intervalId);
-	// 		console.log('All done');
-	// 	} else {
-	// 		count++;
-	// 		console.log('Repeating this line ' + count);
-	// 	}
-	// }, interval);
+
 })();
 </script>
 </body>
