@@ -18,10 +18,16 @@ console.log('months: ' +months.join(', '))
     console.log(jsBirthday)
 
 	// todo:
+    let bDayMonth = jsBirthday.getMonth()
+    // console.log('month:' +bDayMonth)
+    let convertMonth = months[bDayMonth]
+	let bDayDay = jsBirthday.getDate()
+	let bDayYear = jsBirthday.getFullYear()
+    let bDayAll = `${convertMonth} ${bDayDay}, ${bDayYear}`
 	// Log your birthday in the format: January 1, 2014 using the JavaScript Date object.
 	// See link below for methods needed:
 	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#Getter
-	console.log('Here is my birthday using JavaScript: ');
+	console.log('Here is my birthday using JavaScript: ' +bDayAll);
 </script>
 </body>
 </html>
