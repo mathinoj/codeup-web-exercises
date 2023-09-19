@@ -66,9 +66,15 @@
         }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // let subParagraphs = ;
+
+        let subParagraphs = document.getElementsByClassName('sub-paragraph');
+		let sP = subParagraphs.length
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        for(let i = 0; i < sP; i++) {
+			// console.log(i)
+	        subParagraphs[i].innerText = "Mission Accomplished!";
+        }
     })();
 </script>
 </body>
