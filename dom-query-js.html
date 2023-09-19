@@ -18,6 +18,8 @@
 <button id="two" onclick="">B2</button>
 <button id="three" onclick="">B3</button>
 <button id="four" onclick="">B4</button>
+<button id="five" onclick="">B5</button>
+
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -60,22 +62,31 @@
 	    // console.log(listItems)
 
 	    // TODO: Set text color on every other list item to grey
-        for(let i = 0; i < listItems.length; i++){
-            let dbId = listItems[i].getAttribute('data-dbid')
-            if(dbId % 2 === 0){
-	            let greyChange = document.getElementsByTagName('li')[i]
-	            greyChange.style.color = 'grey';
-            }
+        let grey = function(event) {
+	        for (let i = 0; i < listItems.length; i++) {
+		        let dbId = listItems[i].getAttribute('data-dbid')
+		        if (dbId % 2 === 0) {
+			        let greyChange = document.getElementsByTagName('li')[i]
+			        greyChange.style.color = 'grey';
+		        }
+	        }
         }
+		let btn3 = document.getElementById('three');
+		btn3.addEventListener('click', grey)
+
         // TODO: Set text color of li with dbid = 1 to blue
-        for(let i = 0; i < listItems.length; i++) {
-	        let dbId = listItems[i].getAttribute('data-dbid')
-	        console.log("dbid: " + dbId)
-            if(dbId == 1){
-				let blueChange = document.getElementsByTagName('li')[i];
-				blueChange.style.color = 'blue'
-            }
+        let firstBlue = function (event) {
+	        for (let i = 0; i < listItems.length; i++) {
+		        let dbId = listItems[i].getAttribute('data-dbid')
+		        console.log("dbid: " + dbId)
+		        if (dbId == 1) {
+			        let blueChange = document.getElementsByTagName('li')[i];
+			        blueChange.style.color = 'blue'
+		        }
+	        }
         }
+		let btn4 = document.getElementById('four');
+		btn4.addEventListener('click', firstBlue)
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
@@ -83,10 +94,14 @@
 		let sP = subParagraphs.length
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        let mission = function(event){
         for(let i = 0; i < sP; i++) {
 			// console.log(i)
 	        subParagraphs[i].innerText = "Mission Accomplished!";
-        }
+            }
+		}
+		let btn5 = document.getElementById('five');
+		btn5.addEventListener('click', mission)
     })();
 </script>
 </body>
