@@ -14,6 +14,10 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+<button id="one">B1</button>
+<button id="two" onclick="">B2</button>
+<button id="three" onclick="">B3</button>
+<button id="four" onclick="">B4</button>
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -33,14 +37,22 @@
 		console.log(mainHeader)
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = 'JavaScript is Cool'
+        let cool = function(event) {
+		       mainHeader.innerHTML = 'JavaScript is Cool'
+	       }
+	    let btn1 = document.getElementById('one');
+		btn1.addEventListener('click', cool)
 
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.getElementById('sub-header');
 		console.log(subHeader)
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = 'blue'
+        let blue = function(event){
+			subHeader.style.color = 'blue'
+		}
+		let btn2 = document.getElementById('two');
+		btn2.addEventListener('click', blue)
 
         // TODO: Uncomment the next line and get all list items
         let listItems = document.getElementsByTagName('li');

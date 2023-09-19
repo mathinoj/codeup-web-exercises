@@ -2,7 +2,7 @@
 	"use strict";
 	// create a circle object
 	let circle = {
-		radius: 5,
+		radius: 3,
 
 		getArea: function (area) {
 			// TODO: complete this method
@@ -17,8 +17,11 @@
 
 			// If doRounding is true, round the result to the nearest integer.
 			// Otherwise, output the complete value
-
-			console.log("Area of a circle with radius: " + this.radius + ", is: " +Math.round(this.getArea(doRounding)) + ".");
+			if(doRounding) {
+				console.log("Area of a circle with radius: " + this.radius + ", is: " + Math.round(this.getArea()) + ".");
+			} else {
+				console.log("Area of a circle with radius: " + this.radius + ", is: " + this.getArea());
+			}
 		}
 	};
 
