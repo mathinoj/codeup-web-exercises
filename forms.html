@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+<h1>Register With Us</h1>
+<form method="POST" action="https://request-inspector.glitch.me/">
+  <label for="username">Username</label>
+  <input id="username" name="username" type="text" placeholder="Username">
+  <br>
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" placeholder="Password">
+  <br>
+  <br>
+  <!--  /////////////-->
+  <label for="bio"></label>
+  <textarea id="bio" name="bio" rows="4" cols="25" placeholder="Bio"></textarea>
+  <br>
+<!--  /////////////-->
+  <p>How did you hear bout us?</p>
+  <input id="bBoard" type="radio" name="howYouHear" value="billboard">
+  <label for="bBoard">Billboard</label>
+  <br>
+  <input id="radioAdvert" type="radio" name="howYouHear" value="radioAd">
+  <label for="radioAdvert">Radio Advertisement</label>
+  <br>
+  <input id="net" type="radio" name="howYouHear" value="internet">
+  <label for="net">Internet</label>
+  <br>
+  <input id="netAd" type="radio" name="howYouHear" value="internetAd">
+  <label for="netAd">Internet Advertisement</label>
+  <br>
+  <br>
+  <label for="browser">Select your browser:</label>
+  <select id="browser" name="selectBrowser">
+    <option value="chrome">Chrome</option>
+    <option value="firefox">Firefox</option>
+    <option value="safari">Safari</option>
+  </select>
+  <input type="submit">
+</form>
+</body>
+</html>
