@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
 </head>
-<body>
+<body id="bod">
 
 <h1 id="main-header">Hello World!</h1>
 <ul>
@@ -19,6 +19,7 @@
 <button id="three" onclick="">B3</button>
 <button id="four" onclick="">B4</button>
 <button id="five" onclick="">B5</button>
+<button id="six" onclick="">B6</button>
 
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
@@ -40,7 +41,7 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         let cool = function(event) {
-		       mainHeader.innerHTML = 'JavaScript is Cool'
+		       mainHeader.innerHTML = 'JavaScript is Gucci'
 	       }
 	    let btn1 = document.getElementById('one');
 		btn1.addEventListener('click', cool)
@@ -102,6 +103,14 @@
 		}
 		let btn5 = document.getElementById('five');
 		btn5.addEventListener('click', mission)
+
+        let bColor = function(event) {
+	        let bRound = document.getElementById("bod");
+	        bRound.style.backgroundColor = "pink"
+        }
+        let btn6 = document.getElementById('six');
+		btn6.addEventListener('click', bColor)
+
     })();
 </script>
 </body>
