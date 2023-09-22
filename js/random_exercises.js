@@ -1,14 +1,120 @@
 "use strict"
 
 //create a function that accepts an array of numbers and returns the average!
-function average(numArr){
-	let numAvgArr = numArr;
-	let numAvgArrLength = numAvgArr.length
+// function average(numArr){
+// 	let numAvgArr = numArr;
+// 	let numAvgArrLength = numAvgArr.length
+//
+// 	let sum = 0;
+// 	for(let i = 0; i < numAvgArrLength; i++){
+// 		console.log(sum += numAvgArr[i])
+// 	}
+// 	console.log((sum / numAvgArrLength).toFixed(2))
+// }
+// average([2, 2, 2])
 
-	let sum = 0;
-	for(let i = 0; i < numAvgArrLength; i++){
-		console.log(sum += numAvgArr[i])
+function panto(wrd){
+	let e = wrd.split(' ').join('').toLowerCase()
+	console.log(e)
+	// let toLowReg = e.toLowerCase()
+	let y = e.split('').reverse().join('')
+	console.log(y)
+	let toLowRev = y.split(' ').join('')
+	console.log(toLowRev)
+	if(toLowRev === e){
+		console.log('IT IS, IT IS!!!');
+	} else {
+		console.log('It AiNt, It AiNt!!');
 	}
-	console.log((sum / numAvgArrLength).toFixed(2))
 }
-average([2, 2, 2])
+panto('matty')
+
+/**
+ * Count total pets
+ * Write a function named totalPets that accepts an array of objects where each object represents a person, and has a 'pets' property for their owned pets. The function should return the sum of every object's numPets property.
+ *
+ * Examples
+ *
+ * >> totalPets([
+ *       {name: 'Fernando Mendoza', pets: 1},
+ *       {name: 'Douglas Hirsh', pets: 8},
+ *       {name: 'Kenneth Howell', pets: 2}
+ *    ]) ➞ 11
+ */
+function totalPets(arrObj){
+	console.log(arrObj)
+	// console.log(arrObj.length)
+	let sum = 0
+	for(let i = 0; i < arrObj.length; i++){
+		// console.log(i)
+		// console.log(arrObj[i])
+		let x = arrObj[i].pets
+		// console.log("X: " +x)
+		let y = sum+= x;
+		// console.log(y)
+	}
+	console.log('Total # of pets is: ' +sum)
+}
+totalPets([
+	{
+		name: 'Fernando Mendoza',
+		pets: 2
+	},
+	{
+		name: 'Jo Mendoza',
+		pets: 4
+	},
+	{
+		name: 'Moe Mendoza',
+		pets: 5
+	},
+])
+
+/**
+ * TODO:
+ * Write a function named reverseOdd that will take a string as argument, reverse all the words which have odd length. The even length words are not changed.
+ *
+ * Examples
+ *
+ * >> reverseOdd("Bananas") ➞ "sananaB"
+ * >> reverseOdd("One two three four") ➞ "enO owt eerht four"
+ * >> reverseOdd("Make sure uoy only esrever sdrow of ddo length") ➞ "Make sure you only reverse words of odd length"
+ *
+ * Notes
+ * There is exactly one space between each word and no punctuation is used.
+ * Should work with empty string.
+ * Should work with only one word.
+ */
+function reverseOdd(wrd){
+	let wrdIpt = wrd.split(' ')
+	console.log(wrdIpt)
+	let d = wrdIpt.length
+	console.log(d)
+	let r = d % 2 === 0;
+	// console.log(r)
+	// console.log("how many wrds: " +wrdIpt.length)
+	for(let i = 0; i < d; i++){
+		// console.log('i: ' +i)
+		let x = wrdIpt[i].length
+		let h = x % 2 === 0
+		console.log(x)
+		console.log(wrdIpt[i])
+		console.log(h)
+		// console.log(i + " of " +x)
+		let wrdLength = x.length
+
+
+		if(wrdLength % 2 !== 0) {
+			// console.log(Array.from(.split(' ')))
+			// console.log(x)
+			// console.log(wrdIpt)
+			// console.log(wrdIpt.map())
+
+
+		} else {
+
+		}
+
+	}
+}
+reverseOdd('its known sentence claim')

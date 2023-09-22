@@ -1,0 +1,15 @@
+/*h1{*/
+/*    color: red;*/
+/*}*/
+.fancy-header{
+    color: rebeccapurple;
+    text-decoration: underline dotted;
+}
+
+img{
+    float: left;
+    width: 650px;
+    height: 500px;
+    object-fit: cover;
+    padding: 10px;
+}
