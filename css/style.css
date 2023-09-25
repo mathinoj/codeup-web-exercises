@@ -1,15 +1,62 @@
-/*h1{*/
-/*    color: red;*/
-/*}*/
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&display=swap');
+
 .fancy-header{
     color: rebeccapurple;
     text-decoration: underline dotted;
 }
 
 img{
-    float: left;
+    /*float;*/
     width: 650px;
     height: 500px;
     object-fit: cover;
     padding: 10px;
+    opacity: 0.7;
+
 }
+
+header {
+    text-align: center;
+}
+
+body {
+    font-family: 'Martian Mono', monospace;
+    background-image: url("/img/opaque_hand.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container ul{
+    list-style-type: circle;
+}
+
+/*Add a style to change the table, table cells td and rows tr padding and font sizes.*/
+/*table h3{*/
+/*    text-align: justify;*/
+/*}*/
+
+
+.container table, th, td, tr{
+    border: 1px solid;
+    padding: 5px;
+}
+
+a:link {
+    color:red;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:black;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:blue;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
+

@@ -93,27 +93,44 @@ function reverseOdd(wrd){
 	let r = d % 2 === 0;
 	// console.log(r)
 	// console.log("how many wrds: " +wrdIpt.length)
+	const result = wrdIpt.filter((word) => word.length % 2 !== 0);
+
+	// console.log(result);
+
 	for(let i = 0; i < d; i++){
 		// console.log('i: ' +i)
 		let x = wrdIpt[i].length
 		let h = x % 2 === 0
-		console.log(x)
-		console.log(wrdIpt[i])
-		console.log(h)
+		// console.log(x)
+		// console.log(wrdIpt[i])
+		// console.log(h)
 		// console.log(i + " of " +x)
 		let wrdLength = x.length
+		console.log(result);
 
+		let y = wrdIpt[i].split('').reverse().join('')
+		// console.log(y)
 
-		if(wrdLength % 2 !== 0) {
-			// console.log(Array.from(.split(' ')))
-			// console.log(x)
-			// console.log(wrdIpt)
-			// console.log(wrdIpt.map())
+		// const result = wrdIpt.filter((word) => word.length % 2 !== 0);
+		//
+		// console.log(result);
 
-
-		} else {
-
-		}
+		// if(x % 2 !== 0) {
+		// 	// console.log(Array.from(.split(' ')))
+		// 	// console.log(x)
+		// 	console.log(wrdIpt)
+		// 	// console.log(wrdIpt.map())
+		//
+		// 	const map1 = wrdIpt.map((y) => y);
+		// 	//
+		// 	console.log(map1);
+		// 	console.log(y)
+		//
+		//
+		// } else {
+		// 	// console.log(y)
+		//
+		// }
 
 	}
 }
