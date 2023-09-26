@@ -92,46 +92,68 @@ function reverseOdd(wrd){
 	console.log(d)
 	let r = d % 2 === 0;
 	// console.log(r)
-	// console.log("how many wrds: " +wrdIpt.length)
 	const result = wrdIpt.filter((word) => word.length % 2 !== 0);
+	const result1 = wrdIpt.filter((word) => word.length % 2 === 0);
 
-	// console.log(result);
+	let po = result.map((x) => x.split('').reverse().join(''))
+	let pop = result1.map((x) => x.split('').join(''))
 
-	for(let i = 0; i < d; i++){
+	console.log(result)
+	console.log(po)
+	console.log(wrdIpt);
+	console.log(po.length)
+	console.log(pop)
+	let ut = po.concat(pop)
+	console.log(ut)
+
+	const map1 = wrdIpt.map((x) => x.split('').reverse().join(''));
+// console.log(map1)
+	let cond = po + wrdIpt
+	// let we = po.concat(wrdIpt)
+	// console.log(we)
+	// console.log(po)
+
+
+
+	for(let i = 0; i < wrdIpt.length; i++){
 		// console.log('i: ' +i)
 		let x = wrdIpt[i].length
 		let h = x % 2 === 0
-		// console.log(x)
-		// console.log(wrdIpt[i])
-		// console.log(h)
-		// console.log(i + " of " +x)
+		console.log(wrdIpt)
 		let wrdLength = x.length
-		console.log(result);
+		// console.log(po)
+
+		const result = wrdIpt.filter((word) => word.length % 2 !== 0);
 
 		let y = wrdIpt[i].split('').reverse().join('')
-		// console.log(y)
 
-		// const result = wrdIpt.filter((word) => word.length % 2 !== 0);
-		//
-		// console.log(result);
+		// console.log(po.length)
 
-		// if(x % 2 !== 0) {
+		if(x % 2 !== 0) {
 		// 	// console.log(Array.from(.split(' ')))
-		// 	// console.log(x)
-		// 	console.log(wrdIpt)
-		// 	// console.log(wrdIpt.map())
+		// 	console.log(wrdIpt.indexOf(result[i]))
+		// 	console.log(wrdIpt[i])
+			let de = wrdIpt[i]
+			// console.log(wrdIpt.indexOf(de))
+			let by = wrdIpt.indexOf(de)
+			let pe = po.concat(de)
+			console.log(de)
+			// console.log(po)
+			// console.log(pe)
+			// console.log(by)
+		} else {
+			// console.log(map1)
 		//
-		// 	const map1 = wrdIpt.map((y) => y);
-		// 	//
-		// 	console.log(map1);
-		// 	console.log(y)
-		//
-		//
-		// } else {
-		// 	// console.log(y)
-		//
-		// }
+		}
 
 	}
 }
-reverseOdd('its known sentence claim')
+reverseOdd('its known sentence claim is buttons')
+
+// let strang = ['what it dew'];
+// const newArr = strang.map(myFunc)
+//
+// function myFunc(newArry){
+// 	return newArry.reverse()
+// }
+// console.log(myFunc())

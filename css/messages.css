@@ -1,0 +1,55 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message.message-info{
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-radius: 5px;
+    background: #cce5ff;
+    color: #004085;
+    padding: 10px;
+    margin: 10px 5px;
+    /*opacity: .85;*/
+}
+
+.message.message-success{
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-radius: 5px;
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin: 10px 5px;
+    /*opacity: .80;*/
+}
+
+.message.message-warning{
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-radius: 5px;
+    background: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    margin: 10px 5px;
+    /*opacity: .60;*/
+}
+
+.message.message-error{
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-radius: 5px;
+    background: palevioletred;
+    color: darkred;
+    padding: 10px;
+    margin: 10px 5px;
+    opacity: .80;
+}
