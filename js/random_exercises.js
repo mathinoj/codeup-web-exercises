@@ -86,74 +86,26 @@ totalPets([
  * Should work with only one word.
  */
 function reverseOdd(wrd){
-	let wrdIpt = wrd.split(' ')
-	console.log(wrdIpt)
-	let d = wrdIpt.length
-	console.log(d)
-	let r = d % 2 === 0;
-	// console.log(r)
-	const result = wrdIpt.filter((word) => word.length % 2 !== 0);
-	const result1 = wrdIpt.filter((word) => word.length % 2 === 0);
+	let wordInput = wrd.split(' ')
+	console.log(wordInput)
 
-	let po = result.map((x) => x.split('').reverse().join(''))
-	let pop = result1.map((x) => x.split('').join(''))
+	for(let i = 0; i < wordInput.length; i++){
+		let eachWordLength = wordInput[i].length
+		let reverseWord = wordInput[i].split('').reverse().join('')
+		// console.log(reverseWord)
 
-	console.log(result)
-	console.log(po)
-	console.log(wrdIpt);
-	console.log(po.length)
-	console.log(pop)
-	let ut = po.concat(pop)
-	console.log(ut)
-
-	const map1 = wrdIpt.map((x) => x.split('').reverse().join(''));
-// console.log(map1)
-	let cond = po + wrdIpt
-	// let we = po.concat(wrdIpt)
-	// console.log(we)
-	// console.log(po)
-
-
-
-	for(let i = 0; i < wrdIpt.length; i++){
-		// console.log('i: ' +i)
-		let x = wrdIpt[i].length
-		let h = x % 2 === 0
-		console.log(wrdIpt)
-		let wrdLength = x.length
-		// console.log(po)
-
-		const result = wrdIpt.filter((word) => word.length % 2 !== 0);
-
-		let y = wrdIpt[i].split('').reverse().join('')
-
-		// console.log(po.length)
-
-		if(x % 2 !== 0) {
-		// 	// console.log(Array.from(.split(' ')))
-		// 	console.log(wrdIpt.indexOf(result[i]))
-		// 	console.log(wrdIpt[i])
-			let de = wrdIpt[i]
-			// console.log(wrdIpt.indexOf(de))
-			let by = wrdIpt.indexOf(de)
-			let pe = po.concat(de)
-			console.log(de)
-			// console.log(po)
-			// console.log(pe)
-			// console.log(by)
-		} else {
-			// console.log(map1)
-		//
+		if(eachWordLength % 2 !== 0) {
+			let oddWord = wordInput[i]
+			console.log(oddWord)
+			let indexOfOddWord = wordInput.indexOf(oddWord)
+			// console.log(indexOfOddWord)
+			// console.log(reverseWord)
+			wordInput[indexOfOddWord] = reverseWord;
+			// console.log(wrdIpt)
+			console.log(reverseWord)
 		}
-
 	}
+	let resultSentence = wordInput.join(' ').split(', ')
+	console.log(resultSentence)
 }
-reverseOdd('its known sentence claim is buttons')
-
-// let strang = ['what it dew'];
-// const newArr = strang.map(myFunc)
-//
-// function myFunc(newArry){
-// 	return newArry.reverse()
-// }
-// console.log(myFunc())
+reverseOdd('odd words make you act weirdly')
