@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-wrapper{
+/*    min-height: 100dvh;*/
+/*    background-color: black;*/
+/*    color: red;*/
+/*    display: flex;*/
+    /*flex-direction: column;*/
+}
+
+.jumbotron{
+    background-image: url("../img/pizza.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*display: flex;*/
+    /*align-items: flex-end;*/
+    background-position: right center;
+
+}
+
+.jumbotron h1{
+    /*border: 2px solid red;*/
+}
+
+#search-b{
+    width: 100%;
+}

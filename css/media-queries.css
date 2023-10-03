@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*body {*/
+/*    font-family: "Ubuntu", sans-serif;*/
+/*    padding: 1em;*/
+/*    margin: auto;*/
+/*    max-width: 960px;*/
+/*}*/
+
+/*.page-wrapper{*/
+/*    min-height: 100dvh;*/
+/*    background-color: black;*/
+/*    color: red;*/
+/*    display: flex;*/
+/*}*/
+
+.header-img{
+    border: 2px solid red
+}
