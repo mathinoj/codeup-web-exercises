@@ -1,4 +1,19 @@
 /* All your custom styles for this site go here */
+
+/** {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*.page-wrapper{*/
+/*    min-height: 100dvh;*/
+/*    background-color: black;*/
+/*    color: red;*/
+/*    display: flex;*/
+/*}*/
+
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -133,6 +148,8 @@ button.btn.btn-login {
     /*padding: ;*/
     left: 255px;
     bottom: 55px;
+    /*top:140px;*/
+    /*right: 10px;*/
     /*font-size: 30px;*/
 }
 
@@ -143,5 +160,15 @@ button.btn.btn-login {
     left: 1px;
     font-weight: 250;
 }
+
+/*.material-symbols-outlined{*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*    width: 23px;*/
+/*    height: 23px;*/
+/*    border-radius: 100%;*/
+/*    position: relative;*/
+/*    bottom: 90px;*/
+/*}*/
 
 
