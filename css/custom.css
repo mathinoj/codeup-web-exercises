@@ -4,28 +4,42 @@
     box-sizing: border-box;
 }
 
-.page-wrapper{
-/*    min-height: 100dvh;*/
-/*    background-color: black;*/
-/*    color: red;*/
-/*    display: flex;*/
-    /*flex-direction: column;*/
+#search-b{
+    width: 100%;
 }
+
+/*.container-fluid{*/
+/*    !*border: 2px solid red;*!*/
+/*    !*display: flex;*!*/
+/*}*/
+
+/*.container-fluid form{*/
+/*    !*border: 2px solid black;*!*/
+/*    margin-left: auto;*/
+/*    margin-right: 1em;*/
+/*}*/
 
 .jumbotron{
     background-image: url("../img/pizza.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    /*display: flex;*/
-    /*align-items: flex-end;*/
-    background-position: right center;
-
+    /*background-size: contain;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    height: 346px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .jumbotron h1{
     /*border: 2px solid red;*/
+    background: #fefcfb8a;
+    /*min-width: 100%;*/
+    text-align: center;
+    /*align-items: center;*/
+    /*width: 100%;*/
+    /*justify-content: center;*/
 }
 
-#search-b{
-    width: 100%;
-}
+
+
