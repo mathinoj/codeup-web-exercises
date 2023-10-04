@@ -4,28 +4,25 @@
     box-sizing: border-box;
 }
 
-.page-wrapper{
-/*    min-height: 100dvh;*/
-/*    background-color: black;*/
-/*    color: red;*/
-/*    display: flex;*/
-    /*flex-direction: column;*/
+#search-b{
+    width: 100%;
+}
+
+#signup{
+    /*border: 2px solid red;*/
+    text-decoration: none;
+    color: dimgrey;
 }
 
 .jumbotron{
     background-image: url("../img/pizza.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    /*display: flex;*/
-    /*align-items: flex-end;*/
-    background-position: right center;
-
+    height: 346px;
+    background-size: cover;
 }
 
 .jumbotron h1{
-    /*border: 2px solid red;*/
+    background: #fefcfb8a;
+    text-align: center;
 }
 
-#search-b{
-    width: 100%;
-}
+
