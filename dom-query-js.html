@@ -20,6 +20,7 @@
 <button id="four" onclick="">B4</button>
 <button id="five" onclick="">B5</button>
 <button id="six" onclick="">B6</button>
+<button id="seven" onclick="">Reset</button>
 
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
@@ -111,6 +112,19 @@
         let btn6 = document.getElementById('six');
 		btn6.addEventListener('click', bColor)
 
+
+        /////////////////////////////////
+
+        let remover = function (event){
+			// btn6.removeEventListener('click', bColor)
+            // let bRound2 = document.getElementById('bod')
+            // bRound2.style.backgroundColor = 'white'
+	        window.location = 'http://localhost:63342/codeup-web-exercises/dom-query-js.html?_ijt=tieisr7645011vn95opqitf1s9&_ij_reload=RELOAD_ON_SAVE';
+        }
+	    let btn7 = document.getElementById('seven');
+		console.dir(btn7)
+
+        btn7.addEventListener('click', remover)
     })();
 </script>
 </body>

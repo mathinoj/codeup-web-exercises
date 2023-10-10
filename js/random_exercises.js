@@ -105,7 +105,92 @@ function reverseOdd(wrd){
 			console.log(reverseWord)
 		}
 	}
-	let resultSentence = wordInput.join(' ').split(', ')
+	let resultSentence = wordInput.join(' ').split(', ').toString()
 	console.log(resultSentence)
 }
-reverseOdd('odd words make you act weirdly')
+reverseOdd('Make sure you only reverse words of odd length')
+// https://www.freecodecamp.org/news/how-to-remove-an-element-from-a-javascript-array-removing-a-specific-item-in-js/#remove-an-element-from-an-array-with-a-for-loop-and-push
+
+/**
+ * TODO:
+ * Remove the Letters ABC
+ * Create a function named removeABC that will remove the letters "a", "b" and "c" from the given string and return the modified version. If the given string does not contain "a", "b", or "c", return null.
+ *
+ * Examples
+ * >> removeABC("This might be a bit hard") ➞ "This might e  it hrd"
+ * >> removeABC("hello world!") ➞ null
+ * >> removeABC("") ➞ null
+ *
+ * Notes
+ * If the given string does not contain "a", "b", or "c", return null.
+ */
+function removeABC(sentence){
+	let b = sentence.toLowerCase()
+	console.log(b)
+	let x = b.split('')
+	console.log(x)
+
+	let newMinusArr = []
+
+	for(let i=0; i < x.length; i++){
+		// console.log(x[i])
+		if(x[i] !== 'a' && x[i] !== 'b' && x[i] !== 'c'){
+			newMinusArr.push(sentence[i])
+		} else {
+
+		}
+	}
+	let reducedSentence = newMinusArr.join(' ').split(', ').toString()
+	console.log(reducedSentence)
+}
+removeABC('This might be a bit hard')
+
+// If a number is divisible by 3, the student says “fizz” rather than the number.
+// 	If a number is divisible by 5, they say “buzz” rather than the number.
+// 	If a number is divisible by both, they say “fizz buzz”
+
+function fizzBuzz(numb){
+	for(let i=1; i <= numb; i++){
+		// console.log(i)
+		if(i % 3 === 0 && i % 5 === 0){
+			console.log(`Fizz Buzz!: ${i}`);
+		} else if (i % 3 === 0) {
+			console.log(`Fizz!: ${i}`);
+		} else if (i % 5 ===0) {
+			console.log(`Buzz!: ${i}`);
+		} else {
+			console.log(i);
+		}
+	}
+}
+fizzBuzz(30)
+
+/**
+ * TODO:
+ * Integer Digits Count
+ * Create a function named count that counts the integer's number of digits.
+ *
+ * Examples
+ *
+ * >> count(318) ➞ 3
+ * >> count(-92563) ➞ 5
+ * >> count(4666) ➞ 4
+ * >> count(-314890) ➞ 6
+ * >> count(654321) ➞ 6
+ * count(638476) ➞ 6
+ *
+ * Notes
+ * For an added challenge, try to solve this without using strings.
+ */
+
+function count(numb){
+	let y = numb.toString()
+	let p = y.split(' ')
+
+	// let x = y.length;
+	console.log(p)
+
+	let b = parseInt(numb)
+	console.log(b)
+}
+count(-5)
