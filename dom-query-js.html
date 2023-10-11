@@ -134,16 +134,35 @@
          document.querySelector('#main-header')
             .addEventListener('click', () => changeBack())
 
-        //Make all paragraphs have a font size of 18px when they are double clicked.
-        let doubleUp = function (){
-	        let pZ = document.querySelector('.sub-paragraph');
-	        // console.log(pZ)
-            pZ.style.fontSize = '18px';
-        }
+        //Make all paragraphs have a font size of 18px when they are double-clicked.
+        // let doubleUp = function (){
+	    //     let pZ = document.querySelector('.sub-paragraph');
+	    //     // console.log(pZ)
+        //     pZ.style.fontSize = '18px';
+        // }
 		document.querySelector('.sub-paragraph')
-            .addEventListener('dblclick', doubleUp)
+            .addEventListener('dblclick',
+                function (){
+	            let pZ = document.querySelector('.sub-paragraph')
+	            pZ.style.fontSize = '18px'
+			})
 
+        //Set all li text color to red when the mouse is hovering; reset to black when it is not.
+        let getLi = document.getElementsByTagName('li')
+	    // console.log(getL)
+        for(let i=0; i < getLi.length; i++) {
+	        // console.log(getL[i])
+            getLi[i].addEventListener('mouseenter',
+			        function () {
+				        getLi[i].style.color = 'red'
+			        })
 
+	        getLi[i].addEventListener('mouseleave',
+			        function () {
+				        getLi[i].style.color = 'black'
+			        })
+	        // https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist
+        }
     })();
 </script>
 </body>
