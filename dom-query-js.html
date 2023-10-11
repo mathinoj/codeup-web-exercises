@@ -113,8 +113,7 @@
 		btn6.addEventListener('click', bColor)
 
 
-        /////////////////////////////////
-
+        ///////////////THIS IS THE RESET BUTTON//////////////////
         let remover = function (event){
 			// btn6.removeEventListener('click', bColor)
             // let bRound2 = document.getElementById('bod')
@@ -125,6 +124,26 @@
 		console.dir(btn7)
 
         btn7.addEventListener('click', remover)
+	    ///////////////THIS IS THE RESET BUTTON//////////////////
+
+	    // Add code that will change the background color of an h1 element when clicked.
+        let changeBack = function(){
+	        let bRound = document.getElementById("bod");
+	        bRound.style.backgroundColor = "tomato";
+        }
+         document.querySelector('#main-header')
+            .addEventListener('click', () => changeBack())
+
+        //Make all paragraphs have a font size of 18px when they are double clicked.
+        let doubleUp = function (){
+	        let pZ = document.querySelector('.sub-paragraph');
+	        // console.log(pZ)
+            pZ.style.fontSize = '18px';
+        }
+		document.querySelector('.sub-paragraph')
+            .addEventListener('dblclick', doubleUp)
+
+
     })();
 </script>
 </body>
