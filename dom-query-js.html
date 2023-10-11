@@ -148,21 +148,33 @@
 			})
 
         //Set all li text color to red when the mouse is hovering; reset to black when it is not.
-        let getLi = document.getElementsByTagName('li')
-	    // console.log(getL)
-        for(let i=0; i < getLi.length; i++) {
-	        // console.log(getL[i])
-            getLi[i].addEventListener('mouseenter',
-			        function () {
-				        getLi[i].style.color = 'red'
-			        })
+        // let getLi = document.getElementsByTagName('li')
+	    // // console.log(getL)
+        // for(let i=0; i < getLi.length; i++) {
+	    //     // console.log(getL[i])
+        //     getLi[i].addEventListener('mouseenter',
+		// 	        function () {
+		// 		        getLi[i].style.color = 'red'
+		// 	        })
+        //
+	    //     getLi[i].addEventListener('mouseleave',
+		// 	        function () {
+		// 		        getLi[i].style.color = 'black'
+		// 	        })
+	    //     // https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist
+        // }
 
-	        getLi[i].addEventListener('mouseleave',
-			        function () {
-				        getLi[i].style.color = 'black'
-			        })
-	        // https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist
-        }
+	    document.querySelectorAll("li").forEach(box => {
+		    box.addEventListener('mouseenter',
+                ()=> box.style.color = 'red'
+            );
+	    });
+		document.querySelectorAll('li').forEach(reChange =>{
+			reChange.addEventListener('mouseleave',
+				()=> reChange.style.color = 'black'
+            )
+        })
+
     })();
 </script>
 </body>
