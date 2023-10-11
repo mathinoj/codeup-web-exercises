@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Konami</title>
+</head>
+<body>
+  <h1>Konami Code</h1>
+
+  <div class="pic" id="divContra">
+<!--  <img id="profile-pic"  src="" >-->
+  </div>
+
+
+  <script>
+    "use strict";
+
+
+    // document.addEventListener("keyup", event => console.log(event.key)
+    // );
+
+    let cheat = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter']
+    let keyUpArray = []
+    document.addEventListener("keyup", function(event){
+	    keyUpArray.push(event.key)
+	    // console.log(cheat)
+        // console.log(keyUpArray)
+	    let keyUpToString = keyUpArray.toString()
+        let cheatJoined = cheat.toString().split(', ').join(', ')
+	    console.log(keyUpToString)
+	    console.log(cheatJoined)
+
+	    if(cheatJoined === keyUpToString){
+        alert('You gots 30 livez now!')
+            // let bdy = document.querySelector('img')
+            // bdy.setAttribute('src', 'img/Contra1.jpeg')
+        let res = document.querySelector('.pic');
+
+		let img = document.createElement('img');
+		img.src = 'img/Contra1.jpeg';
+		document.querySelector('body').appendChild(img);
+		res.innerHTML = "Image Element Added.";
+		// https://www.geeksforgeeks.org/how-to-create-an-image-element-dynamically-using-javascript/
+      }
+	});
+
+    //Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)
+
+  </script>
+
+</body>
+</html>
