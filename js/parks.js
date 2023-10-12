@@ -15,27 +15,36 @@ grabNewButt.setAttribute('id', 'newButton')
 grabNewButt.innerText = 'Press Dis'
 // console.log(y)
 
-
-// let back = document.querySelector('ul')
-// console.log(back.length)
-
 // Create a button that, when clicked, makes the last li in each ul have a yellow background.
 	let youEl = document.querySelectorAll('ul')
 	console.log(youEl.length)
 	for (let i = 0; i < youEl.length; i++) {
 		// console.log(youEl[i])
-		console.log(youEl[i].lastElementChild)
+		// console.log(youEl[i].lastElementChild)
 
 		let x = document.getElementById('newButton')
 		x.addEventListener('click',
 			function () {
 				youEl[i].lastElementChild.style.backgroundColor = 'goldenrod'
 			})
+
+		// console.log(youEl[i])
 	}
+		// youEl.nextElementSibling.style.backgroundColor = 'red'
     // https://stackoverflow.com/questions/50643302/addeventlistener-on-a-queryselectorall-with-classlist
 
 // When any h3 is clicked, the lis underneath it should have a fontWeight of "bold". Hint: you should use this in the event listener to access the next sibling of the h3 that is clicked. You can get to the corresponding ul by traversing to the h3's sibling and then it's children.
+let grabU = document.querySelectorAll('h3')
+for(let i = 0; i < grabU.length; i++) {
+	let g = grabU[i]
+	// console.log(g)
 
+	g.addEventListener('click',
+		function () {
+			this.nextElementSibling.style.fontWeight = 'bold'
+		}
+	);
+}
 
-
+//When any list item is clicked, the first li of that list item's parent ul should have a font color of blue. Hint: you should again rely on this in the li event handler.
 
