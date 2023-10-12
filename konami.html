@@ -15,6 +15,13 @@
   </div>
 
 
+  <figure>
+<!--      <audio src="sound/fart-01.wav">-->
+<!--  <audio>-->
+<!--          <a href="/media/cc0-audio/t-rex-roar.mp3"> Download audio </a>-->
+<!--      </audio>-->
+  </figure>
+
   <script>
     "use strict";
 
@@ -41,11 +48,26 @@
 
 		let img = document.createElement('img');
 		img.src = 'img/Contra1.jpeg';
-		document.querySelector('body').appendChild(img);
-		res.innerHTML = "Image Element Added.";
+		let x = document.querySelector('body').appendChild(img);
+		    console.log(x)
+		x.style.marginLeft = '6em'
+		// res.innerHTML = "Image Element Added.";
 		// https://www.geeksforgeeks.org/how-to-create-an-image-element-dynamically-using-javascript/
+
+            let kC = document.querySelector('h1')
+            kC.style.textAlign = 'center'
+
+            let sound = document.createElement('audio');
+			sound.src = 'sound/fart-01.wav'
+            let frat = document.querySelector('figure').appendChild(sound)
+            frat.play()
+		    // https://medium.com/geekculture/how-to-fart-with-javascript-5796ce2fc23c
       }
 	});
+
+
+
+
 
     //Allow the user to enter the Konami Code: "↑ ↑ ↓ ↓ ← → ← → b a enter" (the return key)
 
