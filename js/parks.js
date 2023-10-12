@@ -47,4 +47,14 @@ for(let i = 0; i < grabU.length; i++) {
 }
 
 //When any list item is clicked, the first li of that list item's parent ul should have a font color of blue. Hint: you should again rely on this in the li event handler.
+let grabLi = document.querySelectorAll('li')
+for(let i = 0; i < grabLi.length; i++){
+	let b = grabLi[i]
+// 	console.log(b)
+console.log(grabLi)
+	b.addEventListener('click',
+		function (){
+		this.parentElement.firstElementChild.style.backgroundColor = 'red'
+		})
+}
 
