@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+#pics{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pic{
+    flex-basis: calc(30% - 20px);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 0;
+    gap: 10px;
+}

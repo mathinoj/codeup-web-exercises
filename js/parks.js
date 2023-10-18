@@ -36,10 +36,7 @@ grabNewButt.innerText = 'Press Dis'
 // When any h3 is clicked, the lis underneath it should have a fontWeight of "bold". Hint: you should use this in the event listener to access the next sibling of the h3 that is clicked. You can get to the corresponding ul by traversing to the h3's sibling and then it's children.
 let grabU = document.querySelectorAll('h3')
 for(let i = 0; i < grabU.length; i++) {
-	let g = grabU[i]
-	// console.log(g)
-
-	g.addEventListener('click',
+	grabU[i].addEventListener('click',
 		function () {
 			this.nextElementSibling.style.fontWeight = 'bold'
 		}
@@ -49,10 +46,7 @@ for(let i = 0; i < grabU.length; i++) {
 //When any list item is clicked, the first li of that list item's parent ul should have a font color of blue. Hint: you should again rely on this in the li event handler.
 let grabLi = document.querySelectorAll('li')
 for(let i = 0; i < grabLi.length; i++){
-	let b = grabLi[i]
-// 	console.log(b)
-console.log(grabLi)
-	b.addEventListener('click',
+	grabLi[i].addEventListener('click',
 		function (){
 		this.parentElement.firstElementChild.style.backgroundColor = 'red'
 		})
