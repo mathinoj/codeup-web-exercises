@@ -29,10 +29,11 @@ const greetings =
 
 export function randGreet(){
 	let indexNumb = randomNumber(0, (greetings.length - 1))
-	// for(let i=0; i < greetings.length; i++){
+	for(let i=0; i < greetings.length; i++){
 	// console.log(greetings[indexNumb])
+	// return greetings[indexNumb]
+	}
 	return greetings[indexNumb]
-	// }
 }
 // randGreet()
 
