@@ -94,7 +94,7 @@ function onUp(e) {
 				// let breakLine = document.createElement('hr')
 
 
-				// fullDateShow.innerText = fullDate;
+				fullDateShow.innerText = fullDate;
 				tempLoHi.innerText = tempLoMax;
 				weatherIcon.innerHTML = weatherId;
 				description.innerText = weatherDescription
