@@ -1,13 +1,5 @@
 'use strict'
 
-// fetch(`https://api.openweathermap.org/data/2.5/weather?` +
-// 	`lat=29.426825118534886&lon=-98.48948239256946` +
-// 	// `id=4726206` +
-// 	`&appid=${WEATHERMAP_API_KEY}` +
-// 	`&units=imperial`)
-// 	.then( data => data.json())
-// 	.then( currentWeather => console.log(currentWeather));
-
 let dateShow = document.querySelector('#forecast')
 
 fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
@@ -16,79 +8,76 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
 	`&units=imperial`)
 	.then( data => data.json())
 	.then( forecast => {
-		// console.log(forecast)
 		let forecastArr = forecast.list;
-		// console.log(forecastArr)
-		for(let i=0; i < forecastArr.length; i++){
-		// forecast.list.forEach(weather => {
-			// console.log(weather.dt)
-			// console.log(forecastArr[i])
-
+		for(let i=6; i < forecastArr.length; i += 8){
 			let forecastDt = forecastArr[i].dt
 			const date = new Date(forecastDt * 1000);
-			// console.log(date)
 			let month = (date.getMonth()+1)
 			let day = (date.getUTCDate());
 			let year = (date.getUTCFullYear())
 			let hours = date.getHours()
+			// console.log(hours)
 
+			//DATE
 			let fullDate = (`${month}-${day}-${year}`)
-			let fullTime = `${hours}:00`
-
+			console.log(fullDate)
+			//TEMPERATURE
 			let tempLow = forecastArr[i].main.temp_min;
 			let tempMax = forecastArr[i].main.temp_max;
 			let tempLoMax = `${tempLow} F / ${tempMax} F`
-			console.log(forecastArr[i])
-
+			//WEATHER ICON
 			let weatherId = forecastArr[i].weather[0].icon;
-
 			// DESCRIPTION
 			let weatherDescription = `Description: ${forecastArr[i].weather[0].description}`
-			// console.log(weatherDescription)
-
 			// HUMIDITY
 			let weatherHumid = `Humidity: ${forecastArr[i].main.humidity}`;
-			// console.log(weatherHumid)
-
 			// WIND
-
+			let windSpeed = `Wind Speed: ${forecastArr[i].wind.speed}`
 			// PRESSURE
-			if (hours === 16){
+			let pressureMain = `Pressure: ${forecastArr[i].main.pressure}`
+
+			// if (hours === 16){
 				let fullDateShow = document.createElement('h4')
+				fullDateShow.setAttribute('id', 'fullDate')
 				let tempLoHi = document.createElement('h6')
+				tempLoHi.setAttribute('id', 'temp')
 				let weatherIcon = document.createElement('img')
 				weatherIcon.src = `https://openweathermap.org/img/w/${weatherId}.png`
+				weatherIcon.setAttribute('id', "icon")
 				let description = document.createElement('p')
-				description.setAttribute('class', 'weatherDescription')
+				description.setAttribute('id', 'weatherDescription')
 				let humid = document.createElement('p')
-				humid.setAttribute('class', 'humidity')
+				humid.setAttribute('id', 'humidity')
+				let wind = document.createElement('p')
+				wind.setAttribute('id', 'wind')
+				let pressure = document.createElement('p')
+				pressure.setAttribute('id', 'pressure')
+				// let breakLine = document.createElement('hr')
 
 
-
-				fullDateShow.innerText = fullDate;
+				// fullDateShow.innerText = fullDate;
 				tempLoHi.innerText = tempLoMax;
-				weatherIcon.innerHTML = weatherIcon;
+				weatherIcon.innerHTML = weatherId;
 				description.innerText = weatherDescription
 				humid.innerText = weatherHumid
+				wind.innerText = windSpeed;
+				pressure.innerText = pressureMain;
+
 				// dateShow.innerText = fullDate;
 				dateShow.appendChild(fullDateShow)
 				dateShow.appendChild(tempLoHi)
 				dateShow.appendChild(weatherIcon)
 				dateShow.appendChild(description)
 				dateShow.appendChild(humid)
-				// console.log(tempMax)
-				console.log(weatherId)
-				// console.log(fullDate)
+				dateShow.appendChild(wind)
+				dateShow.appendChild(pressure)
 			}
 
-			}
-		// })
+			// }
 
 	});
 
+let x = document.getElementById('coordinates')
+console.log(x)
 
-// const date = new Date(currentWeather.dt * 1000);
-// console.log(date.getFullYear);
 
-// const date = new Date(currentWeather.dt * 1000);
-// console.log(date.getFullYear);
