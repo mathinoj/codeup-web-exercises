@@ -4,7 +4,7 @@ import {randGreet} from './greeting-logic.js'
 
 function main() {
 	document.querySelector('#greetButt').addEventListener('click', greetUser)
-}
+	}
 
 	function greetUser(){
 		let firstName = document.querySelector('#fName').value
@@ -14,5 +14,5 @@ function main() {
 
 		document.querySelector('.greeting').innerText =
 			greetThem;
-}
+	}
 main();

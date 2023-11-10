@@ -23,3 +23,14 @@
     border-radius: 3px;
     display: none;
 }
+
+.container{
+    /*display: flex;*/
+    /*border: 2px solid red;*/
+}
+
+#forecastDiv{
+    /*display: flex;*/
+    /*border: 2px solid red;*/
+    /*justify-content: ;*/
+}

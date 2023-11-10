@@ -49,6 +49,7 @@ function onUp(e) {
 	console.log("Lat: " +coords.lat)
 
 	let dateShow = document.querySelector('#forecast')
+	let weatherArr = [];
 
 	fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
 		`lat=${coords.lat}&lon=${coords.lng}` +
@@ -56,44 +57,52 @@ function onUp(e) {
 		`&units=imperial`)
 		.then( data => data.json())
 		.then( forecast => {
-			let forecastArr = forecast.list;
-			for(let i=6; i < forecastArr.length; i += 8){
-				let forecastDt = forecastArr[i].dt
-				const date = new Date(forecastDt * 1000);
-				let month = (date.getMonth()+1)
+			for (let i = 6; i < forecast.list.length; i += 8) {
+				// let newD = document.createElement("div")
+
+				weatherArr.push(forecast.list[i])
+			}
+
+			console.log(weatherArr)
+			for(let i=0; i < weatherArr.length; i++){
+				let grabCard = document.querySelector(`#card-${i}`)
+
+
+				//CITY
+				let city = forecast.city.name;
+				//DATE
+				let grabDtFromList = weatherArr[i].dt;
+				let date = new Date(grabDtFromList * 1000)
+				let month = (date.getMonth() + 1)
 				let day = (date.getUTCDate());
 				let year = (date.getUTCFullYear())
-				let hours = date.getHours()
-				// console.log(hours)
-
-				//DATE
 				let fullDate = (`${month}-${day}-${year}`)
 				//TEMPERATURE
-				let tempLow = forecastArr[i].main.temp_min;
-				let tempMax = forecastArr[i].main.temp_max;
+				let tempLow = weatherArr[i].main.temp_min;
+				let tempMax = weatherArr[i].main.temp_max;
 				let tempLoMax = `${tempLow} F / ${tempMax} F`
 				//WEATHER ICON
-				let weatherId = forecastArr[i].weather[0].icon;
+				let weatherId = weatherArr[i].weather[0].icon;
 				// DESCRIPTION
-				let weatherDescription = `Description: ${forecastArr[i].weather[0].description}`
+				let weatherDescription = `Description: ${weatherArr[i].weather[0].description}`
 				// HUMIDITY
-				let weatherHumid = `Humidity: ${forecastArr[i].main.humidity}`;
+				let weatherHumid = `Humidity: ${weatherArr[i].main.humidity}`;
 				// WIND
-				let windSpeed = `Wind Speed: ${forecastArr[i].wind.speed}`
+				let windSpeed = `Wind Speed: ${weatherArr[i].wind.speed}`
 				// PRESSURE
-				let pressureMain = `Pressure: ${forecastArr[i].main.pressure}`
+				let pressureMain = `Pressure: ${weatherArr[i].main.pressure}`
 
 
-				let fullDateShow = document.getElementById('fullDate')
-				let tempLoHi = document.getElementById('temp')
-				let weatherIcon = document.getElementById('icon')
-				let description = document.getElementById('weatherDescription')
-				let humid = document.getElementById('humidity')
-				let wind = document.getElementById('wind')
-				let pressure = document.getElementById('pressure')
-				// let breakLine = document.createElement('hr')
+				let showCity = document.getElementById(`city-${i}`)
+				let fullDateShow = document.getElementById(`fullDate-${i}`)
+				let tempLoHi = document.getElementById(`temp-${i}`)
+				let weatherIcon = document.getElementById(`icon-${i}`)
+				let description = document.getElementById(`weatherDescription-${i}`)
+				let humid = document.getElementById(`humidity-${i}`)
+				let wind = document.getElementById(`wind-${i}`)
+				let pressure = document.getElementById(`pressure-${i}`)
 
-
+				showCity.innerText = city;
 				fullDateShow.innerText = fullDate;
 				tempLoHi.innerText = tempLoMax;
 				weatherIcon.innerHTML = weatherId;
@@ -102,14 +111,15 @@ function onUp(e) {
 				wind.innerText = windSpeed;
 				pressure.innerText = pressureMain;
 
-				// dateShow.innerText = fullDate;
-				dateShow.appendChild(fullDateShow)
-				dateShow.appendChild(tempLoHi)
-				dateShow.appendChild(weatherIcon)
-				dateShow.appendChild(description)
-				dateShow.appendChild(humid)
-				dateShow.appendChild(wind)
-				dateShow.appendChild(pressure)
+
+				grabCard.appendChild(showCity)
+				grabCard.appendChild(fullDateShow)
+				grabCard.appendChild(tempLoHi)
+				grabCard.appendChild(weatherIcon)
+				grabCard.appendChild(description)
+				grabCard.appendChild(humid)
+				grabCard.appendChild(wind)
+				grabCard.appendChild(pressure)
 			}
 		});
 

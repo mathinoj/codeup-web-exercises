@@ -1,60 +1,91 @@
 'use strict'
 
-let dateShow = document.querySelector('#forecast')
+// function getWeather(weather){
+// 	let html = '<div>';
+// 	// html += '<h4>' +weather + '</h4>';
+// 	html += '<h6>' + + '</h6>';
+// 	html += `<img>`;
+// 	html += '<p>' + + '</p>';
+// 	html += '<p>' + + '</p>';
+// 	html += '<p>' + + '</p>';
+// 	// html += '<p>' + weather.wind.speed + '</p>';
+// 	html += '</div>';
+// 	return html;
+// }
+//
+// console.log(getWeather())
+
+let dateShow = document.querySelector(`.forecast`)
+// console.log(dateShow)
+// let grabC = document.querySelectorAll('.card')
+// // let grabContainer = document.querySelector('.container')
+// let grabC = document.querySelectorAll('.card-body')
+// let grabC = document.querySelector(`.card-${i}`)
+// console.log(grabCd)
+// let tryThis = document.querySelector("[data-forecast='4']")
+let tryThis = document.querySelectorAll(".forecast")
+
+let weatherArr = [];
+
 fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
 	`lat=29.426825118534886&lon=-98.48948239256946` +
 	`&appid=${WEATHERMAP_API_KEY}` +
 	`&units=imperial`)
 	.then(data => data.json())
 	.then(forecast => {
-		let forecastArr = forecast.list;
-		for (let i = 6; i < forecastArr.length; i += 8) {
-			console.log(forecastArr[i])
-			let forecastDt = forecastArr[i].dt
-			const date = new Date(forecastDt * 1000);
+		for (let i = 6; i < forecast.list.length; i += 8) {
+			weatherArr.push(forecast.list[i])
+		}
+
+		console.log(weatherArr)
+		for(let i=0; i < weatherArr.length; i++){
+			let grabCard = document.querySelector(`#card-${i}`)
+
+			//CITY
+			let city = forecast.city.name;
+			//DATE
+			let grabDtFromList = weatherArr[i].dt;
+			let date = new Date(grabDtFromList * 1000)
 			let month = (date.getMonth() + 1)
 			let day = (date.getUTCDate());
 			let year = (date.getUTCFullYear())
-			let hours = date.getHours()
-			// console.log(hours)
-
-			//DATE
 			let fullDate = (`${month}-${day}-${year}`)
-			console.log(fullDate)
 			//TEMPERATURE
-			let tempLow = forecastArr[i].main.temp_min;
-			let tempMax = forecastArr[i].main.temp_max;
+			let tempLow = weatherArr[i].main.temp_min;
+			let tempMax = weatherArr[i].main.temp_max;
 			let tempLoMax = `${tempLow} F / ${tempMax} F`
 			//WEATHER ICON
-			let weatherId = forecastArr[i].weather[0].icon;
+			let weatherId = weatherArr[i].weather[0].icon;
 			// DESCRIPTION
-			let weatherDescription = `Description: ${forecastArr[i].weather[0].description}`
+			let weatherDescription = `Description: ${weatherArr[i].weather[0].description}`
 			// HUMIDITY
-			let weatherHumid = `Humidity: ${forecastArr[i].main.humidity}`;
+			let weatherHumid = `Humidity: ${weatherArr[i].main.humidity}`;
 			// WIND
-			let windSpeed = `Wind Speed: ${forecastArr[i].wind.speed}`
+			let windSpeed = `Wind Speed: ${weatherArr[i].wind.speed}`
 			// PRESSURE
-			let pressureMain = `Pressure: ${forecastArr[i].main.pressure}`
+			let pressureMain = `Pressure: ${weatherArr[i].main.pressure}`
 
-			// if (hours === 16){
+
+			let showCity = document.createElement('h3')
+			showCity.setAttribute('id', `city-${i}`)
 			let fullDateShow = document.createElement('h4')
-			fullDateShow.setAttribute('id', 'fullDate')
+			fullDateShow.setAttribute('id', `fullDate-${i}`)
 			let tempLoHi = document.createElement('h6')
-			tempLoHi.setAttribute('id', 'temp')
+			tempLoHi.setAttribute('id', `temp-${i}`)
 			let weatherIcon = document.createElement('img')
 			weatherIcon.src = `https://openweathermap.org/img/w/${weatherId}.png`
-			weatherIcon.setAttribute('id', "icon")
+					weatherIcon.setAttribute('id', `icon-${i}`)
 			let description = document.createElement('p')
-			description.setAttribute('id', 'weatherDescription')
+			description.setAttribute('id', `weatherDescription-${i}`)
 			let humid = document.createElement('p')
-			humid.setAttribute('id', 'humidity')
+			humid.setAttribute('id', `humidity-${i}`)
 			let wind = document.createElement('p')
-			wind.setAttribute('id', 'wind')
+			wind.setAttribute('id', `wind-${i}`)
 			let pressure = document.createElement('p')
-			pressure.setAttribute('id', 'pressure')
-			// let breakLine = document.createElement('hr')
+			pressure.setAttribute('id', `pressure-${i}`)
 
 
+			showCity.innerText = city;
 			fullDateShow.innerText = fullDate;
 			tempLoHi.innerText = tempLoMax;
 			weatherIcon.innerHTML = weatherId;
@@ -63,14 +94,15 @@ fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
 			wind.innerText = windSpeed;
 			pressure.innerText = pressureMain;
 
-			// dateShow.innerText = fullDate;
-			dateShow.appendChild(fullDateShow)
-			dateShow.appendChild(tempLoHi)
-			dateShow.appendChild(weatherIcon)
-			dateShow.appendChild(description)
-			dateShow.appendChild(humid)
-			dateShow.appendChild(wind)
-			dateShow.appendChild(pressure)
+
+			grabCard.appendChild(showCity)
+			grabCard.appendChild(fullDateShow)
+			grabCard.appendChild(tempLoHi)
+			grabCard.appendChild(weatherIcon)
+			grabCard.appendChild(description)
+			grabCard.appendChild(humid)
+			grabCard.appendChild(wind)
+			grabCard.appendChild(pressure)
 		}
 	});
 
@@ -98,63 +130,8 @@ function searchIt (e) {
 				`&units=imperial`)
 				.then(data => data.json())
 				.then(forecast => {
-					let forecastArr = forecast.list;
-					for (let i = 6; i < forecastArr.length; i += 8) {
-						console.log(forecastArr[i])
-						let forecastDt = forecastArr[i].dt
-						const date = new Date(forecastDt * 1000);
-						let month = (date.getMonth() + 1)
-						let day = (date.getUTCDate());
-						let year = (date.getUTCFullYear())
-						let hours = date.getHours()
-						// console.log(hours)
 
-						//DATE
-						let fullDate = (`${month}-${day}-${year}`)
-						console.log(fullDate)
-						//TEMPERATURE
-						let tempLow = forecastArr[i].main.temp_min;
-						let tempMax = forecastArr[i].main.temp_max;
-						let tempLoMax = `${tempLow} F / ${tempMax} F`
-						//WEATHER ICON
-						let weatherId = forecastArr[i].weather[0].icon;
-						// DESCRIPTION
-						let weatherDescription = `Description: ${forecastArr[i].weather[0].description}`
-						// HUMIDITY
-						let weatherHumid = `Humidity: ${forecastArr[i].main.humidity}`;
-						// WIND
-						let windSpeed = `Wind Speed: ${forecastArr[i].wind.speed}`
-						// PRESSURE
-						let pressureMain = `Pressure: ${forecastArr[i].main.pressure}`
-
-						// if (hours === 16){
-						let fullDateShow = document.getElementById('fullDate')
-						let tempLoHi = document.getElementById('temp')
-						let weatherIcon = document.getElementById('icon')
-						let description = document.getElementById('weatherDescription')
-						let humid = document.getElementById('humidity')
-						let wind = document.getElementById('wind')
-						let pressure = document.getElementById('pressure')
-						// let breakLine = document.createElement('hr')
-
-
-						fullDateShow.innerText = fullDate;
-						tempLoHi.innerText = tempLoMax;
-						weatherIcon.innerHTML = weatherId;
-						description.innerText = weatherDescription
-						humid.innerText = weatherHumid
-						wind.innerText = windSpeed;
-						pressure.innerText = pressureMain;
-
-						// dateShow.innerText = fullDate;
-						dateShow.appendChild(fullDateShow)
-						dateShow.appendChild(tempLoHi)
-						dateShow.appendChild(weatherIcon)
-						dateShow.appendChild(description)
-						dateShow.appendChild(humid)
-						dateShow.appendChild(wind)
-						dateShow.appendChild(pressure)
-					}
+					// }
 				});
 		})
 	}
