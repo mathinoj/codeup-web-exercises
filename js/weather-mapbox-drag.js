@@ -48,7 +48,6 @@ function onUp(e) {
 	console.log("Long: " +coords.lng)
 	console.log("Lat: " +coords.lat)
 
-	let dateShow = document.querySelector('#forecast')
 	let weatherArr = [];
 
 	fetch(`https://api.openweathermap.org/data/2.5/forecast?` +
